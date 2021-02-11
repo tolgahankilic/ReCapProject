@@ -17,7 +17,8 @@ namespace ConsoleUI
         private static void CarListTest()
         {
             CarManager carManager = new CarManager(new EfCarDal());
-            foreach (var car in carManager.GetAll())
+            var result = carManager.GetAll();
+            foreach (var car in result.Data)
             {
                 Console.WriteLine("Car Name: {0}\nBrand Id: {1}\nColor Id: {2}\nDaily Price: {3}\nDescriptions: {4}\nModel Year: {5}\n",
                     car.CarName, car.BrandId, car.ColorId, car.DailyPrice.ToString(), car.Descriptions, car.ModelYear);
@@ -43,7 +44,7 @@ namespace ConsoleUI
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            foreach (var car in carManager.GetCarDetails())
+            foreach (var car in carManager.GetCarDetails().Data)
             {
                 Console.WriteLine("Car Name: {0}\nBrand Name: {1}\nColor Name: {2}\nDailyPrice: {3}\n", car.CarName, car.BrandName, car.ColorName, car.DailyPrice.ToString());
             }
