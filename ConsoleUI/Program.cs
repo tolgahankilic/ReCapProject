@@ -12,6 +12,55 @@ namespace ConsoleUI
             //CarAddTest();
             //CarListTest();
             //CarDetailTest();
+            //UserAddTest();
+            //UserListTest();
+            //CustomerAddTest();
+            //RentalAddTest();
+        }
+
+        private static void RentalAddTest()
+        {
+            RentalManager rentalManager = new RentalManager(new EfRentalDal());
+            var result = rentalManager.Add(new Rental
+            {
+                CarId = 2,
+                CustomerId = 1,
+                RentDate = DateTime.Now,
+                ReturnDate = null
+            });
+            Console.WriteLine(result.Message);
+        }
+
+        private static void CustomerAddTest()
+        {
+            CustomerManager customerManager = new CustomerManager(new EfCustomerDal());
+            customerManager.Add(new Customer
+            {
+                UserId = 1,
+                CompanyName = "Akyürek Bolatlı Ltd. Şti."
+            });
+        }
+
+        private static void UserListTest()
+        {
+            UserManager userManager = new UserManager(new EfUserDal());
+            var result = userManager.GetAll();
+            foreach (var item in result.Data)
+            {
+                Console.WriteLine(item.FirstName);
+            }
+        }
+
+        private static void UserAddTest()
+        {
+            UserManager userManager = new UserManager(new EfUserDal());
+            userManager.Add(new User
+            {
+                FirstName = "Ulug",
+                LastName = "Aydoğan",
+                Email = "ulugaydogan@test.com",
+                Password = "123456"
+            });
         }
 
         private static void CarListTest()
