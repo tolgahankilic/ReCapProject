@@ -25,5 +25,24 @@ namespace Business.Constants
         public static string BrandListed = "Brands listed.";
         public static string BrandUpdated = "The brand has been updated to DB.";
 
+        public static string CarAlreadyRented = "The car already rented";
+        public static string RentalAdded = "The rental has been added to DB";
+        public static string RentalListed = "Rentals listed";
+        public static string RentalDetails = "Rental details listed";
+        public static string RentalDeleted = "The rental has been deleted to DB.";
+        public static string RentalUpdated = "The rental has been updated to DB.";
+
+        public static string UserAdded = "The user has been added to DB.";
+        public static string UserDeleted = "The user has been deleted to DB.";
+        public static string UserListed = "Users listed.";
+        public static string UserUpdated = "The user has been updated to DB.";
+        public static string UserDetails = "User details listed";
+
+        public static string CustomerAdded = "The customer has been added to DB.";
+        public static string CustomerDeleted = "The customer has been deleted to DB.";
+        public static string CustomerListed = "Customers listed.";
+        public static string CustomerUpdated = "The customer has been updated to DB.";
+        public static string CustomerDetails = "Customer details listed";
+
     }
 }
