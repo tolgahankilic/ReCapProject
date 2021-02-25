@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entities.Concrete;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,6 +15,7 @@ namespace Business.Constants
         public static string CarsListedBrandId = "Cars listed by brand id";
         public static string CarsListedColorId = "Cars listed by color id";
         public static string CarUpdated = "The car has been updated to DB.";
+        public static string GetErrorCarDetails = "Vehicle information not found!";
 
         public static string ColorAdded = "The color has been added to DB.";
         public static string ColorDeleted = "The color has been deleted to DB.";
@@ -44,5 +46,9 @@ namespace Business.Constants
         public static string CustomerUpdated = "The customer has been updated to DB.";
         public static string CustomerDetails = "Customer details listed";
 
+        public static string CarImageAdded = "The car images has been added to DB.";
+        public static string CarImageDeleted = "The car images has been deleted to DB.";
+        public static string CarImageUpdated = "The car images has been updated to DB.";
+        public static string ImageAddingLimit = "You can add 5 photos";
     }
 }
