@@ -15,7 +15,6 @@
 -Microsoft.AspNetCore.Http(2.2.2)<br>
 -System.IdentityModel.Tokens.Jwt(6.8.0)<br>
 -Microsoft.IdentityModel.Tokens(6.8.0)<br>
--Microsoft.Extensions.Identity.Core(5.0.3)<br>
 
 <b>DataAccess</b><br>
 -Microsoft.EntityFrameworkCore.SqlServer(3.1.11)<br>
