@@ -17,13 +17,13 @@ namespace DataAccess.Concrete.EntityFramework
 			using (CarDbContext context = new CarDbContext())
 			{
 				var result = from r in filter is null ? context.Rentals : context.Rentals.Where(filter)
-							 join c in context.Cars on r.CarId equals c.CarId
-							 join b in context.Brands on c.BrandId equals b.BrandId
-							 join cu in context.Customers on r.CustomerId equals cu.CustomerId
-							 join u in context.Users on cu.UserId equals u.UserId
+							 join c in context.Cars on r.CarId equals c.Id
+							 join b in context.Brands on c.BrandId equals b.Id
+							 join cu in context.Customers on r.CustomerId equals cu.Id
+							 join u in context.Users on cu.UserId equals u.Id
 							 select new RentalDetailDto
 							 {
-								 Id = r.RentalId,
+								 Id = r.Id,
 								 BrandName = b.BrandName,
 								 CompanyName = cu.CompanyName,
 								 FirstName = u.FirstName,

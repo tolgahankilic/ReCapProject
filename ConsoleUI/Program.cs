@@ -58,8 +58,7 @@ namespace ConsoleUI
             {
                 FirstName = "Ulug",
                 LastName = "Aydoğan",
-                Email = "ulugaydogan@test.com",
-                Password = "123456"
+                Email = "ulugaydogan@test.com"
             });
         }
 
