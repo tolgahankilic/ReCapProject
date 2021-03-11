@@ -32,6 +32,7 @@ namespace Business.Concrete
             return new SuccessResult(Messages.CarAdded);
         }
 
+        [SecuredOperation("car.delete,admin")]
         public IResult Delete(Car car)
         {
             _carDal.Delete(car);
@@ -63,6 +64,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(p => p.ColorId == id), Messages.CarsListedColorId);
         }
 
+        [SecuredOperation("car.update,admin")]
         public IResult Update(Car car)
         {
             _carDal.Update(car);
