@@ -51,17 +51,16 @@ namespace ConsoleUI
             }
         }
 
-        private static void UserAddTest()
-        {
-            UserManager userManager = new UserManager(new EfUserDal());
-            userManager.Add(new User
-            {
-                FirstName = "Ulug",
-                LastName = "Aydoğan",
-                Email = "ulugaydogan@test.com",
-                Password = "123456"
-            });
-        }
+        //private static void UserAddTest()
+        //{
+        //    UserManager userManager = new UserManager(new EfUserDal());
+        //    userManager.Add(new User
+        //    {
+        //        FirstName = "Ulug",
+        //        LastName = "Aydoğan",
+        //        Email = "ulugaydogan@test.com"
+        //    });
+        //}
 
         private static void CarListTest()
         {
