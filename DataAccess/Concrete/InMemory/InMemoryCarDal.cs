@@ -16,11 +16,11 @@ namespace DataAccess.Concrete.InMemory
         {
             _cars = new List<Car>
             {
-                new Car { Id = 1, BrandId = 1, ColorId = 1, ModelYear = "2015", Descriptions = "Megane", DailyPrice = 80000},
-                new Car { Id = 2, BrandId = 2, ColorId = 2, ModelYear = "2013", Descriptions = "Golf", DailyPrice = 160000},
-                new Car { Id = 3, BrandId = 2, ColorId = 3, ModelYear = "2018", Descriptions = "Polo", DailyPrice = 130000},
-                new Car { Id = 4, BrandId = 1, ColorId = 2, ModelYear = "2017", Descriptions = "Clio", DailyPrice = 70000},
-                new Car { Id = 5, BrandId = 3, ColorId = 4, ModelYear = "2020", Descriptions = "AMG200", DailyPrice = 230000}
+                new Car { Id = 1, BrandId = 1, ColorId = 1, ModelYear = "2015", Description = "Megane", DailyPrice = 80000},
+                new Car { Id = 2, BrandId = 2, ColorId = 2, ModelYear = "2013", Description = "Golf", DailyPrice = 160000},
+                new Car { Id = 3, BrandId = 2, ColorId = 3, ModelYear = "2018", Description = "Polo", DailyPrice = 130000},
+                new Car { Id = 4, BrandId = 1, ColorId = 2, ModelYear = "2017", Description = "Clio", DailyPrice = 70000},
+                new Car { Id = 5, BrandId = 3, ColorId = 4, ModelYear = "2020", Description = "AMG200", DailyPrice = 230000}
             };
         }
 
@@ -68,7 +68,7 @@ namespace DataAccess.Concrete.InMemory
             carToUpdate.BrandId = car.BrandId;
             carToUpdate.ColorId = car.ColorId;
             carToUpdate.ModelYear = car.ModelYear;
-            carToUpdate.Descriptions = car.Descriptions;
+            carToUpdate.Description = car.Description;
             carToUpdate.DailyPrice = car.DailyPrice;
         }
     }
