@@ -38,8 +38,8 @@ namespace Business.Concrete
             {
                 return result;
             }
-
-            carImage.ImagePath = FileHelper.Add(file);
+            var imageResult = FileHelper.Add(file);
+            carImage.ImagePath = imageResult.Message;
             carImage.Date = DateTime.Now;
             _carImageDal.Add(carImage);
             return new SuccessResult();
@@ -50,15 +50,16 @@ namespace Business.Concrete
         [CacheRemoveAspect("ICarImageService.Get")]
         public IResult Update(CarImage carImage, IFormFile file)
         {
-            IResult result = BusinessRules.Run(CheckIfImageLimit(carImage.CarId));
-            if (result != null)
+            var isImage = _carImageDal.Get(c => c.CarId == carImage.CarId);
+
+            var updatedFile = FileHelper.Update(file, isImage.ImagePath);
+            if (!updatedFile.Success)
             {
-                return result;
+                return new ErrorResult(updatedFile.Message);
             }
-            carImage.ImagePath = FileHelper.Update(_carImageDal.Get(p => p.Id == carImage.Id).ImagePath, file);
-            carImage.Date = DateTime.Now;
+            carImage.ImagePath = updatedFile.Message;
             _carImageDal.Update(carImage);
-            return new SuccessResult();
+            return new SuccessResult("Car image updated");
         }
 
         [ValidationAspect(typeof(CarImageValidator))]
@@ -90,7 +91,8 @@ namespace Business.Concrete
             if (!result)
             {
                 List<CarImage> carimage = new List<CarImage>();
-                carimage.Add(new CarImage { CarId = CarId, ImagePath = @"\Images\default.jpg" });
+                //carimage.Add(new CarImage { CarId = CarId, ImagePath = @"\Images\default.jpg" });
+                carimage.Add(new CarImage { CarId = CarId, ImagePath = "images/default.jpg" });
                 return new SuccessDataResult<List<CarImage>>(carimage);
             }
             return new SuccessDataResult<List<CarImage>>(_carImageDal.GetAll(p => p.CarId == CarId));
