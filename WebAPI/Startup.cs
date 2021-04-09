@@ -38,6 +38,8 @@ namespace WebAPI
         {
             services.AddControllers();
 
+            services.AddCors();
+
             /*
              * Autofac eklendiði için kullaným dýþý býrakýldý.
             services.AddSingleton<ICarService, CarManager>();
@@ -87,6 +89,8 @@ namespace WebAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200").AllowAnyHeader());
 
             app.UseHttpsRedirection();
 
